@@ -28,7 +28,6 @@ public class GUI extends JFrame {
                 try {
                     id = Integer.parseInt(txtUncutId.getText());
                     s = new Settings(id);
-//                    Core.setSettings(s);
                     dispose();
                 } catch (NumberFormatException ex) {
                     JOptionPane.showMessageDialog(null, "That is not a valid id");
