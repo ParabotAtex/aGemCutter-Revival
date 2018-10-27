@@ -19,7 +19,7 @@ import java.util.ArrayList;
         name = "aGemCutter", servers = { "Revival" },
         version = 0.1)
 public class Core extends Script {
-    ArrayList<Strategy> strategies = new ArrayList<>();
+    private ArrayList<Strategy> strategies = new ArrayList<>();
     private static Settings settings;
     private static Core core;
 
@@ -27,7 +27,9 @@ public class Core extends Script {
     public boolean onExecute() {
         strategies.add(new Banking());
         strategies.add(new Cutting());
+            
         provide(strategies);
+            
         core = this;
 
         GUI gui = new GUI();
