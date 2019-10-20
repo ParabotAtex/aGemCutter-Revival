@@ -33,16 +33,18 @@ public class Core extends Script {
         core = this;
 
         GUI gui = new GUI();
-        while(gui.isVisible()) {
+        while(gui.isVisible()) { //Wait until GUI closes, meaning user has entered settings
             Time.sleep(100);
         }
 
         if(gui.getSettings() == null) {
             Logger.addMessage("Invalid input, stopping script");
-            stopScript();
+            return false;
         }
 
         settings = gui.getSettings();
+            
+        if(settings == null) return false;
 
         return true;
     }
